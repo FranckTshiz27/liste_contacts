@@ -1,0 +1,414 @@
+body {
+  background-color: rgba(59, 89, 129, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-family: Montserrat;
+  min-width: 40vw;
+}
+
+.mainContainer {
+  width: 80vw;
+  background-color: rgba(59, 89, 129, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.8rem;
+}
+
+h1 {
+  font-size: 1.3em;
+  font-weight: 700;
+  padding-left: 4rem;
+  font-family: Roboto;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+form {
+  display: flex;
+  width: 90%;
+  height: 100%;
+}
+form .container {
+  width: 50%;
+  background-color: rgba(59, 89, 129, 0.3);
+  margin: 1rem 0.2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 1rem 1rem 0 0;
+}
+form .container .form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0.38rem;
+}
+form .container h2 {
+  width: 100%;
+  text-align: center;
+}
+form .container .divAction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.2rem;
+}
+form .container .divAction button {
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+  outline: none;
+}
+form .container .divAction button i {
+  color: #3b5981;
+  font-size: 0.8rem;
+}
+form .container .divAction span {
+  display: none;
+}
+form .container .divAction button:active {
+  background: transparent;
+  border: transparent;
+  outline: none;
+}
+form .container .divAction button:active i {
+  color: rgba(255, 255, 255, 0.3);
+}
+form label {
+  display: flex;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: MontSerrat;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+form input, form select, form textarea {
+  font-family: Roboto;
+  height: 1.3rem;
+  border: 0.2rem solid rgba(255, 255, 255, 0.2);
+  border-width: 0 0 0.12rem 0;
+  background-color: transparent;
+  color: #FFF;
+  font-weight: 400;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+form input:focus, form select:focus, form textarea:focus {
+  outline: none;
+  border: 0.2rem solid #FFF;
+  border-width: 0 0 0.12rem 0;
+  background-color: transparent;
+  transition: 1s;
+}
+form select {
+  height: 1.9rem;
+  font-weight: bolder;
+}
+form textarea {
+  overflow: hidden;
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+form .container--large {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+  height: 5rem;
+}
+form .container--large img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 4%;
+  object-fit: fill;
+}
+
+.hbar {
+  background-color: rgba(59, 89, 129, 0.7);
+  border-bottom: 0.2em solid rgba(255, 255, 255, 0.2);
+  height: 2.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.btn {
+  font-family: Montserrat;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  color: #FFF;
+  cursor: pointer;
+  width: 8.4rem;
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.btn:hover, .btn label:hover {
+  transition: 1s;
+  transform: scale(1.01);
+  color: #0e3f5f;
+  outline: none;
+}
+
+.btn--capture {
+  border-radius: 0.6rem;
+  background-color: #3b5981;
+}
+.btn--capture label {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 0.55rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn--creer {
+  background-color: #007ACC;
+  border: none;
+}
+
+.btn--cancel {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #007ACC;
+  height: 2rem;
+}
+
+option {
+  color: #FFF;
+}
+
+i {
+  font-size: 1.6rem;
+  margin-right: 0.3rem;
+}
+
+.lst {
+  display: flex;
+  flex-direction: column;
+  height: 25.9rem;
+  overflow-y: auto;
+}
+
+.containerItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 0.2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 0.1em solid rgba(255, 255, 255, 0.2);
+}
+.containerItem .containerTextItem {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.containerItem .containerTextItem p {
+  margin-bottom: -0.6rem;
+  font-size: 0.8rem;
+  font-family: Roboto;
+  font-weight: 900;
+  word-break: break-all;
+  color: #3b5981;
+}
+.containerItem .containerTextItem .pBio {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+.containerItem .imgItem {
+  width: 20%;
+  height: 5rem;
+  border-radius: 3rem;
+  padding: 0.4rem;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b5981;
+  border: 31px none #ffffff;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b5981;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #0e2749;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #f2f2f2;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+@media all and (max-width: 765px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+  }
+  form .container {
+    width: 100%;
+    background-color: rgba(59, 89, 129, 0.3);
+    margin: 1rem 0.2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 1rem 1rem 0 0;
+  }
+  form .container .form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0.38rem;
+  }
+  form .container h2 {
+    width: 100%;
+    text-align: center;
+  }
+  form .container .divAction {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.2rem;
+  }
+  form .container .divAction button {
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    outline: none;
+  }
+  form .container .divAction button i {
+    color: #3b5981;
+    font-size: 0.8rem;
+  }
+  form .container .divAction span {
+    display: none;
+  }
+  form .container .divAction button:active {
+    background: transparent;
+    border: transparent;
+    outline: none;
+  }
+  form .container .divAction button:active i {
+    color: rgba(255, 255, 255, 0.3);
+  }
+  form label {
+    display: flex;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: MontSerrat;
+    font-weight: 600;
+    font-size: 0.7rem;
+  }
+  form input, form textarea {
+    font-family: Roboto;
+    height: 1.8rem;
+    border: 0.2rem solid rgba(255, 255, 255, 0.2);
+    border-width: 0 0 0.12rem 0;
+    background-color: transparent;
+    color: #FFF;
+    font-weight: 400;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+  form input:focus, form textarea:focus {
+    outline: none;
+    border: 0.2rem solid #FFF;
+    border-width: 0 0 0.12rem 0;
+    background-color: transparent;
+    transition: 1s;
+  }
+  form textarea {
+    overflow: hidden;
+    height: 3rem;
+    margin-bottom: 1rem;
+  }
+  form .container--large {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    height: 8rem;
+  }
+  form .container--large img {
+    width: 70%;
+    height: auto;
+    border-radius: 4%;
+    object-fit: fill;
+    margin: 0 auto;
+    margin-bottom: 1em;
+  }
+
+  .mainContainer {
+    width: 60vw;
+    background-color: rgba(59, 89, 129, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    font-size: 1em;
+    font-weight: 700;
+    padding-left: 4rem;
+    font-family: Roboto;
+  }
+
+  h2 {
+    font-size: 0.7rem;
+  }
+
+  .hbar {
+    background-color: rgba(59, 89, 129, 0.7);
+    border-bottom: 0.2em solid rgba(255, 255, 255, 0.2);
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem 1rem 0 0;
+  }
+}
+
+

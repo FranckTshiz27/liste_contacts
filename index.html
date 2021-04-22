@@ -1,0 +1,114 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des contacts</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mainContainer"> 
+
+        <div class="hBar">
+            <h1>Répertoire des contacts</h1>
+        </div>
+            <form action="">
+                <div class="container">
+                    <div class="hbar hbar--blue">
+                        <h2>Formulaire de Contact</h2>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="prenom">Prénom</label>
+
+                         <input type="text"  id="prenom">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="nom">Nom</label>
+
+                         <input type="text"  id="nom">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="groupe">Groupe</label>
+                        <select name="" id="groupe" >
+                            <option value="GPA">GPA</option>
+                            <option value="GPB">GPB</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="bio">Biographie</label>
+
+                         <textarea name="" id="bio" cols="30" rows="10"></textarea>
+
+                    </div>
+
+                    <div  class="container--large">
+                        <div>
+                            <div class="btn btn--capture">
+                                <i class="fas fa-folder-plus"></i>
+                                <label for="myFile" class="" id="btnCapture">Insérer une photo</label>
+
+                            </div>
+                            <input type="file" id="myFile" hidden>
+                        </div>
+
+                        <div class="form-group" id="divImg">
+                            <img src="user.png"   alt="" id="imgShow">
+                        </div>
+
+                    </div>
+
+                    <div  class="container--large">
+                        
+                            
+                            <button class="btn btn--creer" type="submit" id="btnSave">
+                                <i class="far fa-save"></i>
+                                Créer
+                            </button>
+
+                        
+                       
+
+                            <button class="btn btn--cancel"   id="btnCancel">
+                                
+                                Annuler
+                            </button>
+
+                    </div>
+
+                </div>
+
+                <div  class="container">
+                     <div class="hBar hbar--blue">
+                         <h2>Liste de contact</h2>
+                     </div>
+
+                     <div  class="lst">
+
+                     </div>
+                     
+                </div>
+            </form>    
+    </div>
+
+
+
+    <script src="traitement.js"></script>
+
+</body>
+</html>
