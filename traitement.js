@@ -22,9 +22,7 @@ let pNameItem;
 let pBioItem;
 let pGroupeItem ;
 let divActionItem;
-let btnEditItem;
 let btnDeleteItem;
-let iEdit;
 let iDelete;
 let spanItem;
 
@@ -99,7 +97,7 @@ function setEvents()
                 contact.groupe = groupe.toUpperCase();
                 contact.image = imgSrc;
                 contact.id=contactId;
-                mesContacts.set(contactId,contact);
+            
 
                 setItem(contact);
 
@@ -136,13 +134,19 @@ function validateData(prenom,nom,groupe,bio)
 function setItem(item)
 {
 
-   initItemComponents();
+  initItemComponents()
+   let eltId = Date.now();
    imgItem.setAttribute('src',item.image);
    pNameItem.innerText=item.prenom +" "+item.nom;
    pBioItem.innerText=item.biographie;
    pGroupeItem.innerText=item.groupe;
-   spanItem.innerText = item.id;
+   spanItem.innerText = eltId;
    lstView.appendChild(containerItem)
+   mesContacts.set(""+eltId,item);
+   console.log(mesContacts.size);
+   console.log(mesContacts.delete(eltId));
+   console.log(mesContacts.get(eltId));
+   console.log(mesContacts);
 }
 
 function initItemComponents()
@@ -150,6 +154,7 @@ function initItemComponents()
 
      // initialisation des controles de l'item du contact
      spanItem = document.createElement("span");
+     spanItem.setAttribute("id","spId")
      containerItem = document.createElement("div");
      containerImgItem = document.createElement("div");
      imgItem = document.createElement("img");
@@ -160,16 +165,11 @@ function initItemComponents()
      pBioItem = document.createElement("p");
      pGroupeItem = document.createElement("p");
      divActionItem  = document.createElement("div");
-     btnEditItem  = document.createElement("button");
-     btnDeleteItem  = document.createElement("button");
-     iEdit = document.createElement("i");
      iDelete =document.createElement("i");
      iDelete.addEventListener('click',deleteItem);
-     iEdit.addEventListener('click',editItem);
-
      pNameItem.setAttribute("id","pNameItem");
-     divActionItem.setAttribute("id","diconatainer2");
-     containerItem.setAttribute("id","diconatainer0");
+     divActionItem.setAttribute("id","divContainer2");
+     containerItem.setAttribute("id","divContainer0");
      containerTextItem.setAttribute("id","containerTextItem");
      pGroupeItem.setAttribute("id","pGroupeItem");
      pBioItem.setAttribute("id","pBioItem");
@@ -185,15 +185,11 @@ function organizeElements()
     containerItem.appendChild(containerTextItem);
     containerItem.appendChild(divActionItem);
     containerTextItem.appendChild(pNameItem);
-    
-    
     containerTextItem.appendChild(pGroupeItem);
     containerTextItem.appendChild(pBioItem);
-    divActionItem.appendChild(btnEditItem);
-    divActionItem.appendChild(btnDeleteItem);
+    divActionItem.appendChild(iDelete);
     divActionItem.appendChild(spanItem);
-    btnDeleteItem.appendChild(iDelete);
-    btnEditItem.appendChild(iEdit);
+    
 
     containerItem.classList.add("containerItem");  
     containerTextItem.classList.add("containerTextItem");
@@ -201,96 +197,27 @@ function organizeElements()
     imgItem.classList.add("imgItem");
     pGroupeItem.classList.add("pBio");
     divActionItem.classList.add("divAction");
-    iEdit.classList.add("fas","fa-edit");
-    iDelete.classList.add("fas","fa-trash-alt");
-    
-
+    iDelete.classList.add("fas","fa-trash-alt","spId");
+   
 }
 
 
  function deleteItem(event)
 {
     event.preventDefault();
-    
-    let item =  event.target.parentNode.parentNode.parentNode;
+    let item = event.target.parentNode.parentNode;
+    console.log(event.target.parentNode.children);
+    let eltId = (""+event.target.parentNode.children["spId"].firstChild.data).trim();
     lstView.removeChild(item);
-    alert(item)
+    mesContacts.delete(eltId);
+    console.log(mesContacts)
+   
 } 
+
 function getItemId(event)
 {
-    let item =  event.target.parentNode.parentNode;
-    
-}
-function editItem(event)
-{
-    event.preventDefault();
-    let item =event.target.parentNode.parentNode.parentNode;
-    item = item.children;
-     for(let elt of item)
-     {
-        motif = elt.getAttribute("id");
-        setData(elt)
-     }
-     
-     
-
+    let item =  event.target.parentNode.parentNode; 
 }
 
-function setData(elt)
-{
-  
-  if(elt!=null)
-  {
-      let motif = elt.getAttribute("id");
-      switch(motif)
-      {
-          case"imgItem":
-           imgShow.setAttribute("src",elt.getAttribute("src"))
-          break;
-          case"containerTextItem":
-            let elements = elt.children;
 
-            for(let elt of elements)
-            {   
-                if(elt!=null)
-                {
-                    switch (elt.getAttribute("id")) {
-                        case "pNameItem":
-                            let noms = (elt.innerText).split(" ")
-                            ipPrenom.value=noms[0];
-                            if(noms.length==3)
-                            {
-                                ipNom.value= noms[1] +" "+ noms[2];
-                            }
-                            else
-                            {
-                                ipNom.value= noms[1];
-                            }
-                            
-                        break;
 
-                        case "pGroupeItem":   
-                            stGroupe.value=elt.innerText; 
-                        break;
-
-                        case "pBioItem":  
-                        alert(pBioItem.innerText);
-                         taBio.value=elt.innerText; 
-                        break;
-                        
-                    
-                       
-                    }
-                    
-                }
-                
-            }
-
-          break;
-
-          
-
-      }
-      lstView.removeChild(elt.parentNode);
-  }
-}

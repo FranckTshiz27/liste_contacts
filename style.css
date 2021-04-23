@@ -57,15 +57,12 @@ form .container .divAction {
   justify-content: space-around;
   padding: 0.2rem;
 }
-form .container .divAction button {
-  background-color: transparent;
-  border: transparent;
-  cursor: pointer;
-  outline: none;
-}
-form .container .divAction button i {
+
+form .container .divAction  i {
   color: #3b5981;
   font-size: 0.8rem;
+  cursor: pointer;
+  outline: none;
 }
 form .container .divAction span {
   display: none;
@@ -410,5 +407,8 @@ i {
     border-radius: 1rem 1rem 0 0;
   }
 }
+
+
+
 
 
